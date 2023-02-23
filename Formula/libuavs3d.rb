@@ -15,7 +15,7 @@ class Libuavs3d < Formula
     cd "build/linux" do
       system "cmake", "-DCOMPILE_10BIT=1", "../.."
       system "make"
-      system "sudo", "make", "install" # if this fails, try separate make/make install steps
+      system "make", "install"
     end
   end
 end

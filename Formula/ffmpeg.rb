@@ -173,7 +173,7 @@ class Ffmpeg < Formula
     args << "--enable-libzvbi" if build.with? "libzvbi"
     args << "--enable-libzmq" if build.with? "zeromq"
     args << "--enable-openssl" if build.with? "openssl"
-    args << "--enable-libuavs3d" if build.with? "libuavs3d"
+    args << "--enable-libuavs3d" if build.with? "uavs3d"
 
     # These librares are GPL-incompatible, and require ffmpeg be built with
     # the "--enable-nonfree" flag, which produces unredistributable libraries

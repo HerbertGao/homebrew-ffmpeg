@@ -1,4 +1,4 @@
-class Libuavs3d < Formula
+class Uavs3d < Formula
   desc ""
   homepage ""
   url "https://github.com/HerbertGao/uavs3d/archive/refs/tags/1.2_1.tar.gz"

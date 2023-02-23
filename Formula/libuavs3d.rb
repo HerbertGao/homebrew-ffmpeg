@@ -9,6 +9,8 @@ class Libuavs3d < Formula
   depends_on "cmake" => :build
 
   def install
+    # ENV.deparallelize  # if your formula fails when building in parallel
+
     system "mkdir", "build/linux"
     system "cd", "build/linux"
     system "cmake", "-DCOMPILE_10BIT=1", "../.."

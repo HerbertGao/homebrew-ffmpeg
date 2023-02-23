@@ -13,10 +13,9 @@ class Uavs3d < Formula
 
     system "mkdir", "build/linux"
     cd "build/linux" do
-      system "cmake", "-DCOMPILE_10BIT=1", "../.."
+      system "cmake", "-DCMAKE_INSTALL_PREFIX=#{prefix}", "-DCOMPILE_10BIT=1", "../.."
       system "make"
-
-      lib.install "source/libuavs3d.a"
+      system "make install"
     end
   end
 end

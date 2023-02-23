@@ -37,7 +37,7 @@ class Ffmpeg < Formula
   option "with-libvmaf", "Enable libvmaf scoring library"
   option "with-libxml2", "Enable libxml2 library"
   option "with-libzvbi", "Enable decoding of DVB teletext pages and DVB teletext subtitles"
-  option "with-libuavs3d", "Enable libuavs3d library"
+  option "with-uavs3d", "Enable uavs3d library"
 
   depends_on "pkg-config" => :build
 
@@ -195,6 +195,11 @@ class Ffmpeg < Formula
     if build.with? "libzvbi"
       ENV.prepend_path "PKG_CONFIG_PATH", Formula["zvbi"].opt_lib/"pkgconfig"
       args << "--enable-libzvbi"
+    end
+
+    if build.with? "uavs3d"
+      ENV.prepend_path "PKG_CONFIG_PATH", Formula["uavs3d"].opt_lib/"pkgconfig"
+      args << "--enable-libuavs3d"
     end
 
     args << "--enable-version3" if build.with?("opencore-amr") || build.with?("libvmaf")

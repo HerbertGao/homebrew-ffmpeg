@@ -12,9 +12,10 @@ class Libuavs3d < Formula
     # ENV.deparallelize  # if your formula fails when building in parallel
 
     system "mkdir", "build/linux"
-    system "cd", "build/linux"
-    system "cmake", "-DCOMPILE_10BIT=1", "../.."
-    system "make"
-    system "make", "install"
+    cd "build/linux" do
+      system "cmake", "-DCOMPILE_10BIT=1", "../.."
+      system "make"
+      system "make", "install"
+    end
   end
 end

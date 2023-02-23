@@ -15,7 +15,8 @@ class Libuavs3d < Formula
     cd "build/linux" do
       system "cmake", "-DCOMPILE_10BIT=1", "../.."
       system "make"
-      system "make", "install" # if this fails, try separate make/make install steps
+
+      lib.install "source/libuavs3d.a"
     end
   end
 end

@@ -1,6 +1,6 @@
 # homebrew-ffmpeg
 
-[![GH Actions CI](https://github.com/homebrew-ffmpeg/homebrew-ffmpeg/actions/workflows/main.yml/badge.svg)](https://github.com/homebrew-ffmpeg/homebrew-ffmpeg/actions/workflows/main.yml)
+[![GH Actions CI](https://github.com/herbertgao/homebrew-ffmpeg/actions/workflows/main.yml/badge.svg)](https://github.com/herbertgao/homebrew-ffmpeg/actions/workflows/main.yml)
 
 This is a 3<sup>rd</sup> party tap for [Homebrew](https://brew.sh/). It provides a formula for `ffmpeg` which includes options for enabling additional features and libraries.
 
@@ -20,8 +20,8 @@ In order to use this tap, you need to install Homebrew.
 Then, to run a default installation, run:
 
 ```
-brew tap homebrew-ffmpeg/ffmpeg
-brew install homebrew-ffmpeg/ffmpeg/ffmpeg
+brew tap herbertgao/ffmpeg
+brew install herbertgao/ffmpeg/ffmpeg
 ```
 
 **Note:** If you already have `ffmpeg` installed from Homebrew core, you will receive an error. You need to first run `brew uninstall ffmpeg` before you can use this tap.
@@ -31,19 +31,19 @@ brew install homebrew-ffmpeg/ffmpeg/ffmpeg
 To see the list of supported options for this formula, run:
 
 ```
-brew options homebrew-ffmpeg/ffmpeg/ffmpeg
+brew options herbertgao/ffmpeg/ffmpeg
 ```
 
 Then, you can run:
 
 ```
-brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-<option1> --with-<option2> ...
+brew install herbertgao/ffmpeg/ffmpeg --with-<option1> --with-<option2> ...
 ```
 
 If you **really** wish to install all the available options, you can run:
 
 ```
-brew install homebrew-ffmpeg/ffmpeg/ffmpeg $(brew options homebrew-ffmpeg/ffmpeg/ffmpeg --compact)
+brew install herbertgao/ffmpeg/ffmpeg $(brew options herbertgao/ffmpeg/ffmpeg --compact)
 ```
 
 Note that this may install libraries for which you need extra SDKs installed, such as `--with-decklink`, or libraries which have to be installed before running the formula, such as `--with-chromaprint`.
@@ -53,7 +53,7 @@ Note that this may install libraries for which you need extra SDKs installed, su
 FFmpeg recommends installing the latest Git master version over a release. This formula builds the latest release by default, but you can install the latest Git version by adding the `--HEAD` option:
 
 ```
-brew install homebrew-ffmpeg/ffmpeg/ffmpeg --HEAD
+brew install herbertgao/ffmpeg/ffmpeg --HEAD
 ```
 
 Please note that we don't generally provide support `HEAD` builds, since they may cause issues with other Homebrew-supplied formulae.
@@ -63,13 +63,13 @@ Please note that we don't generally provide support `HEAD` builds, since they ma
 To update Homebrew and upgrade the formula to the most recent stable release:
 
 ```
-brew update && brew upgrade homebrew-ffmpeg/ffmpeg/ffmpeg
+brew update && brew upgrade herbertgao/ffmpeg/ffmpeg
 ```
 
 Or, if you are using the `HEAD` version and want to update to the latest commit:
 
 ```
-brew update && brew upgrade homebrew-ffmpeg/ffmpeg/ffmpeg --fetch-HEAD
+brew update && brew upgrade herbertgao/ffmpeg/ffmpeg --fetch-HEAD
 ```
 
 ## Included libraries
@@ -153,7 +153,7 @@ Here is a workaround:
 brew uninstall ffmpeg
 brew install SOFTWARE
 brew uninstall --ignore-dependencies ffmpeg
-brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-YOUR-OPTIONS
+brew install herbertgao/ffmpeg/ffmpeg --with-YOUR-OPTIONS
 ```
 
 ## Issues

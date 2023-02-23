@@ -37,6 +37,7 @@ class Ffmpeg < Formula
   option "with-libvmaf", "Enable libvmaf scoring library"
   option "with-libxml2", "Enable libxml2 library"
   option "with-libzvbi", "Enable decoding of DVB teletext pages and DVB teletext subtitles"
+  option "with-libuavs3d", "Enable libuavs3d library"
 
   depends_on "pkg-config" => :build
 
@@ -71,6 +72,7 @@ class Ffmpeg < Formula
   depends_on "librsvg" => :optional
   depends_on "libsoxr" => :optional
   depends_on "libssh" => :optional
+  depends_on "libuavs3d" => :optional
   depends_on "libvidstab" => :optional
   depends_on "libvmaf" => :optional
   depends_on "libxml2" => :optional
@@ -172,6 +174,7 @@ class Ffmpeg < Formula
     args << "--enable-libzvbi" if build.with? "libzvbi"
     args << "--enable-libzmq" if build.with? "zeromq"
     args << "--enable-openssl" if build.with? "openssl"
+    args << "--enable-libuavs3d" if build.with? "libuavs3d"
 
     # These librares are GPL-incompatible, and require ffmpeg be built with
     # the "--enable-nonfree" flag, which produces unredistributable libraries

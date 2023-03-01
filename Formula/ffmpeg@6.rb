@@ -36,6 +36,7 @@ class FfmpegAT6 < Formula
   option "with-libvmaf", "Enable libvmaf scoring library"
   option "with-libxml2", "Enable libxml2 library"
   option "with-libzvbi", "Enable decoding of DVB teletext pages and DVB teletext subtitles"
+  option "with-uavs3d", "Enable uavs3d library"
 
   depends_on "pkg-config" => :build
 
@@ -171,6 +172,7 @@ class FfmpegAT6 < Formula
     args << "--enable-libzvbi" if build.with? "libzvbi"
     args << "--enable-libzmq" if build.with? "zeromq"
     args << "--enable-openssl" if build.with? "openssl"
+    args << "--enable-libuavs3d" if build.with? "uavs3d"
 
     # These librares are GPL-incompatible, and require ffmpeg be built with
     # the "--enable-nonfree" flag, which produces unredistributable libraries
@@ -192,6 +194,11 @@ class FfmpegAT6 < Formula
     if build.with? "libzvbi"
       ENV.prepend_path "PKG_CONFIG_PATH", Formula["zvbi"].opt_lib/"pkgconfig"
       args << "--enable-libzvbi"
+    end
+
+    if build.with? "uavs3d"
+      ENV.prepend_path "PKG_CONFIG_PATH", Formula["uavs3d"].opt_lib/"pkgconfig"
+      args << "--enable-libuavs3d"
     end
 
     args << "--enable-version3" if build.with?("opencore-amr") || build.with?("libvmaf")
